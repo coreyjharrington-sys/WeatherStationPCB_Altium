@@ -1,0 +1,85 @@
+# =============================================
+# Altium Designer .gitignore
+# =============================================
+
+# --- History & Backup Files ---
+History/
+__Previews/
+*.~*
+*.bak
+*.BAK
+*.Bak
+
+# --- Autosave / Temp Files ---
+*.tmp
+*.TMP
+~*.SchDoc
+~*.PcbDoc
+
+# --- Logs ---
+*.log
+*.LOG
+
+# --- Simulation Output ---
+*.sdf
+*.sdo
+*.xls
+
+# --- CAM / Fabrication Outputs (regenerate from source) ---
+# Comment these out if you WANT to commit fab outputs
+Project Outputs for*/
+*.Cam
+*.apr
+*.apt
+*.GBL
+*.GBO
+*.GBP
+*.GBS
+*.GKO
+*.GM1
+*.GM2
+*.GTL
+*.GTO
+*.GTP
+*.GTS
+*.G2L
+*.G3L
+*.DRL
+*.drl
+*.ncd
+*.xln
+*.GD1
+*.GG1
+*.GG2
+*.GB3
+*.REP
+*.RUL
+*.DRC
+*.IPC
+
+# --- BOM / Reports (regenerate) ---
+*.BOM
+*.CSV
+*.xls
+*.xlsx
+
+# --- 3D Model Cache ---
+*.step
+*.stp
+*.STEP
+*.STP
+
+# --- Database / Search Indexes ---
+*.MDB
+*.ldb
+
+# --- Windows Thumbnails ---
+Thumbs.db
+desktop.ini
+
+# --- macOS ---
+.DS_Store
+
+# --- Schematic Snippets Cache ---
+*.SchLib.Bak
+*.PcbLib.Bak
