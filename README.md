@@ -1,7 +1,5 @@
----
-
 # Weather Station PCB  
-*A mixed‑signal embedded system designed in Altium Designer, featuring STM32L4, nRF24L01, MCP73871, and BME280*
+*A mixed‑signal PCB designed in Altium Designer, featuring STM32L4, nRF24L01, MCP73871, and BME280*
 
 ---
 
