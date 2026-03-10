@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=LED_TX Pin=D1-A
-Removed Member From Class: ClassName=U_STM32RF_MCU Member=D1
-Added Component: Designator=D?(LED_0402_RED)
-Added Pin To Net: NetName=LED_TX Pin=D?-A
-Added Pin To Net: NetName=NetD?_K Pin=D?-K
-Added Pin To Net: NetName=NetD?_K Pin=R4-2
-Added Net: Name=NetD?_K
-Added Member To Class: ClassName=U_STM32RF_MCU Member=Component D? RED

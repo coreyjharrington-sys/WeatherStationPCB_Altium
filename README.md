@@ -1,16 +1,16 @@
 ---
 
-# 🌦️ Weather Station Hardware Platform  
-*A mixed‑signal embedded system designed in Altium Designer, featuring STM32L4, nRF24L01, and a fully modeled PDN.*
+# Weather Station PCB  
+*A mixed‑signal embedded system designed in Altium Designer, featuring STM32L4, nRF24L01, MCP73871, and BME280*
 
 ---
 
-![3D Board View](Pictures\STM32RF_Altium.PNG)
+![3D Board View](Pictures/STM32RF_Altium.PNG)
 
 ---
 
-## 📘 Overview  
-This project is a custom **Weather Station hardware platform** designed from scratch in **Altium Designer**. It integrates:
+## Overview  
+This project is a custom **Weather Station PCB** designed from scratch in **Altium Designer**. It integrates:
 
 - **STM32L432** Microcontroller  
 - **nRF24L01+** 2.4 GHz RF transceiver  
@@ -32,7 +32,7 @@ This README documents the design, the engineering decisions, and the lessons lea
 
 ---
 
-## 🧩 System Architecture  
+## System Architecture  
 The board is organized into clear functional blocks:
 
 | Block | Description |
@@ -47,7 +47,7 @@ The board is organized into clear functional blocks:
 
 ---
 
-## 🛠️ Altium Designer Workflow  
+## Altium Designer Workflow  
 This project was built using a professional Altium workflow:
 
 ### **Schematic Design**
@@ -77,7 +77,7 @@ This project was built using a professional Altium workflow:
 
 ---
 
-## 📡 RF Layout Considerations  
+## RF Layout Considerations  
 The nRF24L01+ section was routed with RF best practices:
 
 - Short, direct supply routing  
@@ -89,7 +89,7 @@ The nRF24L01+ section was routed with RF best practices:
 
 ---
 
-## 🔌 Power System  
+## Power System  
 The board includes:
 
 - MCP73871 Li‑ion charger IC  
@@ -100,7 +100,7 @@ The board includes:
 
 ---
 
-## 🧪 Bring‑Up & Validation Plan  
+## Bring‑Up & Validation Plan  
 A structured bring‑up plan was created:
 
 ### **Electrical Bring‑Up**
@@ -124,7 +124,7 @@ A structured bring‑up plan was created:
 
 ---
 
-## 📚 What I Learned  
+## What I Learned  
 This project was a deep dive into real‑world hardware engineering:
 
 ### **Altium Designer**
@@ -154,7 +154,7 @@ This project was a deep dive into real‑world hardware engineering:
 
 ---
 
-## 🚀 Future Improvements  
+## Future Improvements  
 - Add polymer/tantalum bulk capacitor for better damping  
 - Move to a 4‑layer stackup for improved PDN and RF performance  
 - Add onboard debugger  
@@ -163,7 +163,7 @@ This project was a deep dive into real‑world hardware engineering:
 
 ---
 
-## 📝 License  
+## License  
 MIT License — feel free to use this design as a reference.
 
 ---
