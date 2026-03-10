@@ -1,0 +1,14 @@
+Change Component Comment : Designator=R5 Old Comment=2K New Comment=1K
+Change Component Comment : Designator=C11 Old Comment=4.7 New Comment=4.7u
+Change Component Comment : Designator=C15 Old Comment=4.7 New Comment=4.7u
+Change Component Comment : Designator=R13 Old Comment=470 New Comment=2K
+Added Component: Designator=C23(CAP_0402)
+Add component (AddParameter): Name = "Dielectric"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Distributor Link"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LCSC"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM155R61E475ME15D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C23-1
+Added Pin To Net: NetName=VBUS Pin=C23-2
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C23 100n

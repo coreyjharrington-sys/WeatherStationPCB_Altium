@@ -1,0 +1,5 @@
+Change Net Name : Old Net Name=NetD1_K New Net Name=LED_TX_K
+Change Net Name : Old Net Name=NetD2_K New Net Name=LED_RX_K
+Change Net Name : Old Net Name=NetD4_K New Net Name=POWER_GOOD_K
+Change Net Name : Old Net Name=NetD5_K New Net Name=CHARGED_K
+Change Net Name : Old Net Name=NetD6_K New Net Name=CHARGING_K

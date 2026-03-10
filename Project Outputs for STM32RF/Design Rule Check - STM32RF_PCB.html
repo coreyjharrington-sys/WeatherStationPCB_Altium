@@ -1,0 +1,532 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\ADDevelop\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/17/2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:42:48 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc">C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">56</td></tr>
+</table>
+</td>
+</table><a name="ID3EZEBXEPFCRNE2Q1ZL4EMBBV0LCIGEJRWPSAB2LVAVMVOXWUONWP"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCNFJDJLWUSRZKHATMKAVGKLXTLFFUF5DBRB0XXP32PMGNJG5J5JG">Clearance Constraint (Gap=0.3mm) (InNet('GND')),(InNetClass('Power'))</a></td>
+<td class="column2">46</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMEDOLI5VYAYNGNTM3MRKTPQ2YCW02XNE4CK1POMRPTPJAODIQC0B">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIBX5XZ2I0R45ONXRYCSTCGSLTJ5QIFTHIJ2Z44OIWG2VQL5EMKYB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYOXBQU0QH3K2MCDN2QM0ZWRXDIMHCFE40N4OPZP30ZRAHP5DWW1O">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKST00J2TH4D5P3O1TCPLRM3TPED3QYJNGYU21RDNOKEWOCWKDDLD">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDS4VJRYUW0Y4BHK1T22ZBDGG0PKWDXYSEZR1IYBGNMPPUA2EHCZZK">Width Constraint (Min=0.025mm) (Max=0.254mm) (Preferred=0.254mm) (InNetClass('Differentials'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ4LC1O1YPRK2DRZDVVZ0HBKIQFVFHDXZB1MAWSCAXCT1KR3430W">Width Constraint (Min=0.12mm) (Max=5mm) (Preferred=0.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQE4NICUSMNTUFOUKKQPIEKIWRKWOHS5FIN4YH2FYH13YKZ3DM5TC">Width Constraint (Min=0.254mm) (Max=0.357mm) (Preferred=0.357mm) (InNetClass('2.4GHzRF'))</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTKBKEGO54BA3CSI3G5FLZPZ1EB31OSSQRDGX13NEHNQAYF1NUOML">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMX3Y1YKJNWLRLDMBZGCVUCW2FG1PNQRW4VBQN2HQRRYMC43PK2JK">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDE25430XYUQ3GER5SZQXBK5ILYPHZ2WGPMF3NFDBRL3T2D3LWCQSD">Minimum Annular Ring (Minimum=0.07mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFDOYKQYLUMTKHPCQB41DVAZ03IMKKAYMN5FHF2CDAI0KO2QDYEHB">Hole Size Constraint (Min=0.19mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRCU4C41FVZOLBKAINO4QYLTBGPK4FXWJUIOOBLJNNE4VV3J1AJCH">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQYDNEVBMSIVDF1FFAZNGZE1GIKSKPPSUS3M3EGIVSAZDMDDLD5NM">Minimum Solder Mask Sliver (Gap=0.11mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0PWPMFAZB1Y1O1XVW23ZTS0ZZCDEPLOXET0C3LERYKNZ0T4SUFAK">Silk To Solder Mask (Clearance=0.17mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZCE03LBM45A5G52WRYHAWWC3BERWA0EYWXKXPRDENRB12GWVVH0N">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTW5UKH5MBLOXMUVGCALY4RA4NEB0LP3KASNXJLFJYOOTC32FVKSI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5AQVQXLGKMXJP1J0Z2DGJDMMEIXJ1ZTMDTMLJEBTK3J3DNGBNZD">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDUSD0LKH5EVCKQA0S3SA4XTVZEGPLR5RHFY3UGFGULTAU5W455ZH">Matched Lengths(Tolerance=25.4mm) (InDifferentialPair ('USB_D'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCUQ5FT3CQMPVNNP5F00IATIR0MLWEBEJLLNTANKJACYRUOBLDYTM">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">56</td>
+</tr>
+</table><br><a name="IDCNFJDJLWUSRZKHATMKAVGKLXTLFFUF5DBRB0XXP32PMGNJG5J5JG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.3mm) (InNet('GND')),(InNetClass('Power'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4809.484mil|Location2.X=4822.595mil|Location1.Y=3012.338mil|Location2.Y=3027.222mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4809.484mil|Location2.X=4822.595mil|Location1.Y=3012.338mil|Location2.Y=3027.222mil|Absolute=True">Clearance Constraint: (0.28mm &lt; 0.3mm) Between Pad C18-1(121.92mm,76.995mm) on Top Layer And Via (122.605mm,76.443mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4523.981mil|Location2.X=4537.042mil|Location1.Y=3130.838mil|Location2.Y=3143.899mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4523.981mil|Location2.X=4537.042mil|Location1.Y=3130.838mil|Location2.Y=3143.899mil|Absolute=True">Clearance Constraint: (0.278mm &lt; 0.3mm) Between Pad C21-2(115.104mm,80.128mm) on Top Layer And Pad R16-2(115.3mm,79.2mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4546.225mil|Location2.X=4560.217mil|Location1.Y=2971.225mil|Location2.Y=2985.32mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4546.225mil|Location2.X=4560.217mil|Location1.Y=2971.225mil|Location2.Y=2985.32mil|Absolute=True">Clearance Constraint: (0.212mm &lt; 0.3mm) Between Pad U1-1(115.415mm,76.01mm) on Top Layer And Pad U1-32(116.015mm,75.41mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4390.714mil|Location2.X=4404.705mil|Location1.Y=2815.714mil|Location2.Y=2829.808mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4390.714mil|Location2.X=4404.705mil|Location1.Y=2815.714mil|Location2.Y=2829.808mil|Absolute=True">Clearance Constraint: (0.212mm &lt; 0.3mm) Between Pad U1-16(111.315mm,71.91mm) on Top Layer And Pad U1-17(111.915mm,71.31mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3192.289mil|Location2.Y=3205.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3192.289mil|Location2.Y=3205.349mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-1(101.95mm,81.25mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.422mil|Location2.X=3884.483mil|Location1.Y=3211.974mil|Location2.Y=3225.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.422mil|Location2.X=3884.483mil|Location1.Y=3211.974mil|Location2.Y=3225.035mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-14(98.05mm,81.75mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.422mil|Location2.X=3884.483mil|Location1.Y=3192.289mil|Location2.Y=3205.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.422mil|Location2.X=3884.483mil|Location1.Y=3192.289mil|Location2.Y=3205.349mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-15(98.05mm,81.25mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3891.107mil|Location2.X=3904.168mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3891.107mil|Location2.X=3904.168mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-16(99mm,80.3mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3930.477mil|Location2.X=3943.538mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3930.477mil|Location2.X=3943.538mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-18(100mm,80.3mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3950.162mil|Location2.X=3963.224mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3950.162mil|Location2.X=3963.224mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-19(100.5mm,80.3mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3211.974mil|Location2.Y=3225.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3211.974mil|Location2.Y=3225.035mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-2(101.95mm,81.75mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3998.391mil|Location2.X=4011.452mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3998.391mil|Location2.X=4011.452mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-2(101.95mm,81.75mm) on Top Layer And Pad U2-3(101.95mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-2(101.95mm,81.75mm) on Top Layer And Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3969.847mil|Location2.X=3982.909mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3969.847mil|Location2.X=3982.909mil|Location1.Y=3172.604mil|Location2.Y=3185.664mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-20(101mm,80.3mm) on Top Layer And Pad U2-21(100mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3251.344mil|Location2.Y=3264.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.532mil|Location2.X=4002.593mil|Location1.Y=3251.344mil|Location2.Y=3264.405mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U2-21(100mm,82.25mm) on Top Layer And Pad U2-4(101.95mm,82.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3998.391mil|Location2.X=4011.452mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3998.391mil|Location2.X=4011.452mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-3(101.95mm,82.25mm) on Top Layer And Pad U2-4(101.95mm,82.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-3(101.95mm,82.25mm) on Top Layer And Track (101.95mm,81.75mm)(102.722mm,81.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-3(101.95mm,82.25mm) on Top Layer And Track (101.95mm,82.75mm)(102.735mm,82.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.107mil|Location2.X=4029.168mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U2-4(101.95mm,82.75mm) on Top Layer And Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.509mil|Location2.X=4891.57mil|Location1.Y=2934.651mil|Location2.Y=2947.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.509mil|Location2.X=4891.57mil|Location1.Y=2934.651mil|Location2.Y=2947.712mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-14(123.855mm,74.456mm) on Top Layer And Pad U3-15(123.855mm,74.956mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4870.536mil|Location2.X=4883.597mil|Location1.Y=2935.093mil|Location2.Y=2948.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4870.536mil|Location2.X=4883.597mil|Location1.Y=2935.093mil|Location2.Y=2948.155mil|Absolute=True">Clearance Constraint: (0.272mm &lt; 0.3mm) Between Pad U3-14(123.855mm,74.456mm) on Top Layer And Track (123.877mm,74.978mm)(123.877mm,76.902mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4851.934mil|Location2.X=4864.995mil|Location1.Y=2944.493mil|Location2.Y=2957.554mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4851.934mil|Location2.X=4864.995mil|Location1.Y=2944.493mil|Location2.Y=2957.554mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U3-15(123.855mm,74.956mm) on Top Layer And Pad U3-21(122.005mm,73.956mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.509mil|Location2.X=4891.57mil|Location1.Y=2934.651mil|Location2.Y=2947.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.509mil|Location2.X=4891.57mil|Location1.Y=2934.651mil|Location2.Y=2947.712mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-15(123.855mm,74.956mm) on Top Layer And Track (123.855mm,74.456mm)(124.358mm,74.456mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4886.107mil|Location2.X=4899.168mil|Location1.Y=2939.244mil|Location2.Y=2954.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4886.107mil|Location2.X=4899.168mil|Location1.Y=2939.244mil|Location2.Y=2954.983mil|Absolute=True">Clearance Constraint: (0.219mm &lt; 0.3mm) Between Pad U3-15(123.855mm,74.956mm) on Top Layer And Track (124.548mm,74.632mm)(125.07mm,75.155mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4886.107mil|Location2.X=4899.168mil|Location1.Y=2939.244mil|Location2.Y=2954.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4886.107mil|Location2.X=4899.168mil|Location1.Y=2939.244mil|Location2.Y=2954.983mil|Absolute=True">Clearance Constraint: (0.219mm &lt; 0.3mm) Between Pad U3-15(123.855mm,74.956mm) on Top Layer And Via (124.548mm,74.632mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2969.099mil|Location2.Y=2982.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2969.099mil|Location2.Y=2982.16mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-17(122.505mm,75.806mm) on Top Layer And Pad U3-18(122.005mm,75.806mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-17(122.505mm,75.806mm) on Top Layer And Track (122.005mm,75.806mm)(122.005mm,76.92mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4796.816mil|Location2.X=4809.877mil|Location1.Y=2960.241mil|Location2.Y=2973.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4796.816mil|Location2.X=4809.877mil|Location1.Y=2960.241mil|Location2.Y=2973.302mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U3-18(122.005mm,75.806mm) on Top Layer And Pad U3-21(122.005mm,73.956mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2977.958mil|Location2.Y=2991.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2977.958mil|Location2.Y=2991.019mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-18(122.005mm,75.806mm) on Top Layer And Track (122.505mm,75.806mm)(122.505mm,76.031mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-18(122.005mm,75.806mm) on Top Layer And Track (122.505mm,76.031mm)(122.586mm,76.112mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.131mil|Location2.X=4790.192mil|Location1.Y=2850.005mil|Location2.Y=2863.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.131mil|Location2.X=4790.192mil|Location1.Y=2850.005mil|Location2.Y=2863.066mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.3mm) Between Pad U3-21(122.005mm,73.956mm) on Top Layer And Pad U3-7(121.505mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-7(121.505mm,72.106mm) on Top Layer And Pad U3-8(122.005mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-7(121.505mm,72.106mm) on Top Layer And Track (122.005mm,70.98mm)(122.005mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-8(122.005mm,72.106mm) on Top Layer And Track (121.405mm,71.781mm)(121.505mm,71.881mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2832.288mil|Location2.Y=2845.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2832.288mil|Location2.Y=2845.349mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Pad U3-8(122.005mm,72.106mm) on Top Layer And Track (121.505mm,71.881mm)(121.505mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4807.423mil|Location2.X=4820.484mil|Location1.Y=3007.555mil|Location2.Y=3024.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4807.423mil|Location2.X=4820.484mil|Location1.Y=3007.555mil|Location2.Y=3024.874mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Region (0 hole(s)) Top Layer And Via (122.605mm,76.443mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4037.649mil|Location2.X=4050.71mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4037.649mil|Location2.X=4050.71mil|Location1.Y=3221.816mil|Location2.Y=3234.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (101.95mm,81.75mm)(102.722mm,81.75mm) on Top Layer And Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4038.135mil|Location2.X=4051.196mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4038.135mil|Location2.X=4051.196mil|Location1.Y=3241.501mil|Location2.Y=3254.562mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer And Track (101.95mm,82.75mm)(102.735mm,82.75mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4039.084mil|Location2.X=4052.145mil|Location1.Y=3222.251mil|Location2.Y=3235.312mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4039.084mil|Location2.X=4052.145mil|Location1.Y=3222.251mil|Location2.Y=3235.312mil|Absolute=True">Clearance Constraint: (0.228mm &lt; 0.3mm) Between Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer And Via (102.759mm,81.672mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4039.692mil|Location2.X=4052.753mil|Location1.Y=3241.363mil|Location2.Y=3254.424mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4039.692mil|Location2.X=4052.753mil|Location1.Y=3241.363mil|Location2.Y=3254.424mil|Absolute=True">Clearance Constraint: (0.243mm &lt; 0.3mm) Between Track (101.95mm,82.25mm)(103.85mm,82.25mm) on Top Layer And Via (102.774mm,82.843mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (121.405mm,71.781mm)(121.505mm,71.881mm) on Top Layer And Track (122.005mm,70.98mm)(122.005mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4786.973mil|Location2.X=4800.034mil|Location1.Y=2823.43mil|Location2.Y=2836.491mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (121.505mm,71.881mm)(121.505mm,72.106mm) on Top Layer And Track (122.005mm,70.98mm)(122.005mm,72.106mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (122.005mm,75.806mm)(122.005mm,76.92mm) on Top Layer And Track (122.505mm,75.806mm)(122.505mm,76.031mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.72mil|Location1.Y=2986.816mil|Location2.Y=2999.877mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (122.005mm,75.806mm)(122.005mm,76.92mm) on Top Layer And Track (122.505mm,76.031mm)(122.586mm,76.112mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.719mil|Location1.Y=3003.028mil|Location2.Y=3016.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.658mil|Location2.X=4819.719mil|Location1.Y=3003.028mil|Location2.Y=3016.09mil|Absolute=True">Clearance Constraint: (0.25mm &lt; 0.3mm) Between Track (122.005mm,75.806mm)(122.005mm,76.92mm) on Top Layer And Via (122.605mm,76.443mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4870.536mil|Location2.X=4883.597mil|Location1.Y=2935.093mil|Location2.Y=2948.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4870.536mil|Location2.X=4883.597mil|Location1.Y=2935.093mil|Location2.Y=2948.155mil|Absolute=True">Clearance Constraint: (0.272mm &lt; 0.3mm) Between Track (123.855mm,74.456mm)(124.358mm,74.456mm) on Top Layer And Track (123.877mm,74.978mm)(123.877mm,76.902mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDMEDOLI5VYAYNGNTM3MRKTPQ2YCW02XNE4CK1POMRPTPJAODIQC0B"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.15mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4410.108mil|Location2.X=4417.814mil|Location1.Y=2776.8mil|Location2.Y=2786.439mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4410.108mil|Location2.X=4417.814mil|Location1.Y=2776.8mil|Location2.Y=2786.439mil|Absolute=True">Clearance Constraint: (0.128mm &lt; 0.15mm) Between Track (111.76mm,70.56mm)(111.915mm,70.715mm) on Top Layer And Via (112.368mm,70.495mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4410.108mil|Location2.X=4417.814mil|Location1.Y=2776.8mil|Location2.Y=2786.439mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4410.108mil|Location2.X=4417.814mil|Location1.Y=2776.8mil|Location2.Y=2786.439mil|Absolute=True">Clearance Constraint: (0.128mm &lt; 0.15mm) Between Track (111.915mm,70.715mm)(111.915mm,71.31mm) on Top Layer And Via (112.368mm,70.495mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4450.261mil|Location2.X=4457.416mil|Location1.Y=2772.604mil|Location2.Y=2779.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4450.261mil|Location2.X=4457.416mil|Location1.Y=2772.604mil|Location2.Y=2779.759mil|Absolute=True">Clearance Constraint: (0.125mm &lt; 0.15mm) Between Track (112.915mm,70.172mm)(112.915mm,71.31mm) on Top Layer And Via (113.415mm,70.515mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.029mil|Location2.X=4653.184mil|Location1.Y=2835.202mil|Location2.Y=2842.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.029mil|Location2.X=4653.184mil|Location1.Y=2835.202mil|Location2.Y=2842.357mil|Absolute=True">Clearance Constraint: (0.14mm &lt; 0.15mm) Between Track (116.015mm,71.91mm)(121.005mm,71.91mm) on Top Layer And Via (118.1mm,72.4mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4676.793mil|Location2.X=4683.948mil|Location1.Y=2835.096mil|Location2.Y=2842.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4676.793mil|Location2.X=4683.948mil|Location1.Y=2835.096mil|Location2.Y=2842.251mil|Absolute=True">Clearance Constraint: (0.135mm &lt; 0.15mm) Between Track (116.015mm,71.91mm)(121.005mm,71.91mm) on Top Layer And Via (118.881mm,72.395mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4644.16mil|Location2.X=4651.315mil|Location1.Y=2920.168mil|Location2.Y=2927.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4644.16mil|Location2.X=4651.315mil|Location1.Y=2920.168mil|Location2.Y=2927.323mil|Absolute=True">Clearance Constraint: (0.136mm &lt; 0.15mm) Between Track (117.556mm,74.456mm)(120.155mm,74.456mm) on Top Layer And Via (118.053mm,73.97mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDQE4NICUSMNTUFOUKKQPIEKIWRKWOHS5FIN4YH2FYH13YKZ3DM5TC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.254mm) (Max=0.357mm) (Preferred=0.357mm) (InNetClass('2.4GHzRF'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.073mil|Location2.X=4895.815mil|Location1.Y=2865.862mil|Location2.Y=2878.705mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.073mil|Location2.X=4895.815mil|Location1.Y=2865.862mil|Location2.Y=2878.705mil|Absolute=True">Width Constraint: Track (123.855mm,72.956mm)(123.973mm,72.956mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.357mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.559mil|Location2.X=4907.3mil|Location1.Y=2885.547mil|Location2.Y=2898.39mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.559mil|Location2.X=4907.3mil|Location1.Y=2885.547mil|Location2.Y=2898.39mil|Absolute=True">Width Constraint: Track (123.855mm,73.456mm)(124.556mm,73.456mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.357mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.559mil|Location2.X=4907.3mil|Location1.Y=2905.232mil|Location2.Y=2918.075mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.559mil|Location2.X=4907.3mil|Location1.Y=2905.232mil|Location2.Y=2918.075mil|Absolute=True">Width Constraint: Track (123.855mm,73.956mm)(124.556mm,73.956mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.357mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4905.528mil|Location2.X=4926.781mil|Location1.Y=2876.434mil|Location2.Y=2890.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\STM32RF\STM32RF_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4905.528mil|Location2.X=4926.781mil|Location1.Y=2876.434mil|Location2.Y=2890.22mil|Absolute=True">Width Constraint: Track (124.556mm,73.456mm)(124.971mm,73.041mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.357mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

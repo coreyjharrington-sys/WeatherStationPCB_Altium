@@ -1,0 +1,12 @@
+Change Net Name : Old Net Name=NetD3_4 New Net Name=USB_D_P
+Change Net Name : Old Net Name=NetD3_6 New Net Name=USB_D_N
+Change Net Name : Old Net Name=NetJ4_3 New Net Name=I2C1_SCL
+Change Net Name : Old Net Name=NetJ4_4 New Net Name=I2C1_SDA
+Change Net Name : Old Net Name=NetU1_25 New Net Name=NRF_IRQ
+Change Net Name : Old Net Name=NetU1_26 New Net Name=SPI3_SCK
+Change Net Name : Old Net Name=NetU1_27 New Net Name=SPI3_MISO
+Change Net Name : Old Net Name=NetU1_28 New Net Name=SPI3_MOSI
+Change Net Name : Old Net Name=NetU1_29 New Net Name=NRF_SPI3_ICS
+Change Net Name : Old Net Name=NetU1_30 New Net Name=NRF_CE
+Change Net Name : Old Net Name=USB_CONN_D- New Net Name=USB_CONN_D_N
+Change Net Name : Old Net Name=USB_CONN_D+ New Net Name=USB_CONN_D_P

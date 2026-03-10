@@ -1,0 +1,151 @@
+Removed Pin From Net: NetName=GND Pin=C8-1
+Removed Pin From Net: NetName=+3.3V Pin=C8-2
+Removed Pin From Net: NetName=GND Pin=C9-1
+Removed Pin From Net: NetName=+3.3V Pin=C9-2
+Removed Pin From Net: NetName=GND Pin=C10-1
+Removed Pin From Net: NetName=+3.3V Pin=C10-2
+Removed Pin From Net: NetName=+3.3V Pin=C11-2
+Removed Pin From Net: NetName=GND Pin=C12-1
+Removed Pin From Net: NetName=+3.3V Pin=C12-2
+Removed Pin From Net: NetName=GND Pin=C13-1
+Removed Pin From Net: NetName=+3.3V Pin=C13-2
+Removed Pin From Net: NetName=GND Pin=C14-1
+Removed Pin From Net: NetName=+3.3V Pin=C14-2
+Removed Pin From Net: NetName=+3.3V Pin=C15-2
+Removed Pin From Net: NetName=GND Pin=C17-1
+Removed Pin From Net: NetName=VBUS_FUSED Pin=C17-2
+Removed Pin From Net: NetName=GND Pin=C18-1
+Removed Pin From Net: NetName=VBUS_MCP_OUT Pin=C18-2
+Removed Pin From Net: NetName=GND Pin=C19-1
+Removed Pin From Net: NetName=VBAT Pin=C19-2
+Removed Pin From Net: NetName=GND Pin=C20-1
+Removed Pin From Net: NetName=+3.3V Pin=C20-2
+Removed Pin From Net: NetName=GND Pin=C21-1
+Removed Pin From Net: NetName=VBUS Pin=C21-2
+Removed Pin From Net: NetName=GND Pin=C22-1
+Removed Pin From Net: NetName=NetB1_3 Pin=C22-2
+Removed Pin From Net: NetName=GND Pin=C23-1
+Removed Pin From Net: NetName=+3.3V Pin=C23-2
+Removed Pin From Net: NetName=GND Pin=C24-1
+Removed Pin From Net: NetName=+3.3V Pin=C24-2
+Removed Pin From Net: NetName=GND Pin=C25-1
+Removed Pin From Net: NetName=+3.3V Pin=C25-2
+Removed Member From Class: ClassName=U_STM32RF_NRF Member=C8
+Removed Member From Class: ClassName=U_STM32RF_NRF Member=C9
+Removed Member From Class: ClassName=U_STM32RF_NRF Member=C10
+Removed Member From Class: ClassName=U_STM32RF_NRF Member=C11
+Removed Member From Class: ClassName=U_STM32RF_MCU Member=C12
+Removed Member From Class: ClassName=U_STM32RF_MCU Member=C13
+Removed Member From Class: ClassName=U_STM32RF_MCU Member=C14
+Removed Member From Class: ClassName=U_STM32RF_MCU Member=C15
+Removed Member From Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=C18
+Removed Member From Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=C19
+Removed Member From Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=C20
+Removed Member From Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=C21
+Removed Member From Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=C22
+Removed Member From Class: ClassName=U_STM32RF_BME280 Member=C23
+Removed Member From Class: ClassName=U_STM32RF_BME280 Member=C24
+Removed Member From Class: ClassName=U_STM32RF_BME280 Member=C25
+Change Component Footprint: Designator=C8 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C9 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C10 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C12 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C13 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C14 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C18 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C19 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C20 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C21 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C22 Old Footprint=CAP_0402 New Footprint=FP-GRM158-0_2-MFG
+Change Component Footprint: Designator=C17 Old Footprint=CAP_0603 New Footprint=FP-GRM158-0_2-MFG
+Change Component Comment : Designator=C21 Old Comment=0.1u New Comment=22uF
+Change Component Comment : Designator=C11 Old Comment=1u New Comment=4.7
+Change Component Comment : Designator=C12 Old Comment=1u New Comment=22uF
+Change Component Comment : Designator=C20 Old Comment=1u New Comment=22uF
+Change Component Comment : Designator=C22 Old Comment=1u New Comment=22uF
+Change Component Comment : Designator=C18 Old Comment=4.7u New Comment=22uF
+Change Component Comment : Designator=C19 Old Comment=4.7u New Comment=22uF
+Change Component Comment : Designator=C17 Old Comment=10u New Comment=22uF
+Change Component Comment : Designator=C15 Old Comment=100n New Comment=4.7
+Change Component Comment : Designator=C8 Old Comment=100n New Comment=22uF
+Change Component Comment : Designator=C9 Old Comment=100n New Comment=22uF
+Change Component Comment : Designator=C10 Old Comment=100n New Comment=22uF
+Change Component Comment : Designator=C13 Old Comment=100n New Comment=22uF
+Change Component Comment : Designator=C14 Old Comment=100n New Comment=22uF
+Change Managed Component Library Link : Designator=C8 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C9 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C10 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C12 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C13 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C14 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C17 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C18 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C19 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C20 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C21 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change Managed Component Library Link : Designator=C22 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=1A3AA6E7-1065-4D79-A681-63930170A6D8 Old RevisionGUID= New RevisionGUID=6B3D4124-879F-442D-BBF5-03698E4295BB
+Change component parameters: Designator = "C11" ("C11"); Footprint = "CAP_0402"; UniqueID = "\SCMUOVYH\HJLCMZNU" ("\SCMUOVYH\HJLCMZNU")
+Change component parameters (AddParameter): Name = "Dielectric"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Distributor Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics "; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM155R61E475ME15D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C15" ("C15"); Footprint = "CAP_0402"; UniqueID = "\SCMUOVYH\NNATZOWL" ("\SCMUOVYH\NNATZOWL")
+Change component parameters (AddParameter): Name = "Dielectric"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Distributor Link"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LCSC"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics "; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM155R61E475ME15D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C8" ("C8"); Footprint = "CAP_0402"; UniqueID = "\VDATBPUF\MJEJELNW" ("\VDATBPUF\MJEJELNW")
+Change component parameters: Designator = "C9" ("C9"); Footprint = "CAP_0402"; UniqueID = "\VDATBPUF\SQQYHAMW" ("\VDATBPUF\SQQYHAMW")
+Change component parameters: Designator = "C10" ("C10"); Footprint = "CAP_0402"; UniqueID = "\VDATBPUF\PQHOXKVC" ("\VDATBPUF\PQHOXKVC")
+Change component parameters: Designator = "C12" ("C12"); Footprint = "CAP_0402"; UniqueID = "\SCMUOVYH\QUEOKZPO" ("\SCMUOVYH\QUEOKZPO")
+Change component parameters: Designator = "C13" ("C13"); Footprint = "CAP_0402"; UniqueID = "\SCMUOVYH\RTYWIJQN" ("\SCMUOVYH\RTYWIJQN")
+Change component parameters: Designator = "C14" ("C14"); Footprint = "CAP_0402"; UniqueID = "\SCMUOVYH\VTNBRCFB" ("\SCMUOVYH\VTNBRCFB")
+Change component parameters: Designator = "C17" ("C17"); Footprint = "CAP_0603"; UniqueID = "\SCMUOVYH\DATPIZUW" ("\SCMUOVYH\DATPIZUW")
+Change component parameters: Designator = "C18" ("C18"); Footprint = "CAP_0402"; UniqueID = "\HWCODFBX\STFUOJSX" ("\HWCODFBX\STFUOJSX")
+Change component parameters: Designator = "C19" ("C19"); Footprint = "CAP_0402"; UniqueID = "\HWCODFBX\TWLPOMDD" ("\HWCODFBX\TWLPOMDD")
+Change component parameters: Designator = "C20" ("C20"); Footprint = "CAP_0402"; UniqueID = "\HWCODFBX\JAOPHQGJ" ("\HWCODFBX\JAOPHQGJ")
+Change component parameters: Designator = "C21" ("C21"); Footprint = "CAP_0402"; UniqueID = "\XOYMZULD\UPMDFTST" ("\XOYMZULD\UPMDFTST")
+Change component parameters: Designator = "C22" ("C22"); Footprint = "CAP_0402"; UniqueID = "\XOYMZULD\WJOQFWPY" ("\XOYMZULD\WJOQFWPY")
+Added Pin To Net: NetName=+3.3V Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=+3.3V Pin=C9-1
+Added Pin To Net: NetName=GND Pin=C9-2
+Added Pin To Net: NetName=+3.3V Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=VBUS_FUSED Pin=C11-2
+Added Pin To Net: NetName=VBUS_MCP_OUT Pin=C12-1
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Pin To Net: NetName=VBAT Pin=C13-1
+Added Pin To Net: NetName=GND Pin=C13-2
+Added Pin To Net: NetName=+3.3V Pin=C14-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Added Pin To Net: NetName=VBUS Pin=C15-2
+Added Pin To Net: NetName=NetB1_3 Pin=C17-1
+Added Pin To Net: NetName=GND Pin=C17-2
+Added Pin To Net: NetName=+3.3V Pin=C18-1
+Added Pin To Net: NetName=GND Pin=C18-2
+Added Pin To Net: NetName=+3.3V Pin=C19-1
+Added Pin To Net: NetName=GND Pin=C19-2
+Added Pin To Net: NetName=+3.3V Pin=C20-1
+Added Pin To Net: NetName=GND Pin=C20-2
+Added Pin To Net: NetName=+3.3V Pin=C21-1
+Added Pin To Net: NetName=GND Pin=C21-2
+Added Pin To Net: NetName=+3.3V Pin=C22-1
+Added Pin To Net: NetName=GND Pin=C22-2
+Added Member To Class: ClassName=U_STM32RF_MCU Member=Component C8 22uF
+Added Member To Class: ClassName=U_STM32RF_MCU Member=Component C9 22uF
+Added Member To Class: ClassName=U_STM32RF_MCU Member=Component C10 22uF
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C11 4.7
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C12 22uF
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C13 22uF
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C14 22uF
+Added Member To Class: ClassName=U_STM32RF_PowerUSBSchDoc Member=Component C15 4.7
+Added Member To Class: ClassName=U_STM32RF_NRF Member=Component C18 22uF
+Added Member To Class: ClassName=U_STM32RF_NRF Member=Component C19 22uF
+Added Member To Class: ClassName=U_STM32RF_NRF Member=Component C20 22uF
+Added Member To Class: ClassName=U_STM32RF_BME280 Member=Component C21 22uF
+Added Member To Class: ClassName=U_STM32RF_BME280 Member=Component C22 22uF
